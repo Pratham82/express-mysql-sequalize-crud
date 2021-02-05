@@ -1,10 +1,10 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
+    "username": "pratham",
+    "password": "rootedpirate",
     "database": "socialnetwork",
     "host": "127.0.0.1",
-    "dialect": "mysql2"
+    "dialect": "mysql"
   },
   "test": {
     "username": "root",
