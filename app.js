@@ -4,6 +4,9 @@ const app = express()
 // parsing the request body in json
 app.use(express.json())
 
+// DB connection
+require('./src/database/database')
+
 // @get request
 app.get('/', (_, res) => {
   res.send('Express Server Started')
