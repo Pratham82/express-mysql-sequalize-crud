@@ -1,19 +1,28 @@
 module.exports = async () => {
-  const User = require('./models/User')
   const Tweet = require('./models/Tweet')
+  const User = require('./models/User')
 
-  try {
-    const user = await User.create({ username: 'testUser', passwd: 'testPass' })
-  } catch (err) {
-    console.log(`Error: ${err.message}`)
-  }
+  //  Setting user and tweets relationship
+  User.hasMany(Tweet, { as: 'Tweets', foreignKey: 'userId' })
+  Tweet.belongsTo(User, { as: 'User', foreignKey: 'userId' })
 
-  try {
-    const tweet = await Tweet.create({
-      content: 'This is test content',
-      userId: user.id,
-    })
-  } catch (err) {
-    console.log(`Error: ${err.message}`)
-  }
+  const errorHandler = (err) => console.log(`Error: ${err.message}`)
+
+  // Creating new User
+  const user = await User.create({
+    username: 'testUser',
+    passwd: 'testPass',
+  }).catch(errorHandler)
+
+  // Creating new Tweet
+  const tweet = await Tweet.create({
+    content: 'This is test content',
+  }).catch(errorHandler)
+
+  const users = await User.findAll({
+    where: { username: 'testUser' },
+    include: [{ model: Tweet, as: 'Tweets' }],
+  }).catch(errorHandler)
+
+  console.log(users)
 }

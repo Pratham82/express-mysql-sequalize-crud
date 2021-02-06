@@ -5,7 +5,9 @@ const app = express()
 app.use(express.json())
 
 // DB connection
-require('./src/database/database')
+require('./src/database/connection')
+
+require('./src/bootstrap')()
 
 // @get request
 app.get('/', (_, res) => {
