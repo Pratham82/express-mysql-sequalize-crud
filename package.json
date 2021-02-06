@@ -1,0 +1,27 @@
+{
+  "name": "express-mysql-sequalize-crud",
+  "version": "1.0.0",
+  "description": "Creating API with Express and MySQL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server",
+    "dev": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pratham82/express-mysql-sequalize-crud.git"
+  },
+  "author": "Prathamesh Mali",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Pratham82/express-mysql-sequalize-crud/issues"
+  },
+  "homepage": "https://github.com/Pratham82/express-mysql-sequalize-crud#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.5.0",
+    "sequelize-cli": "^6.2.0"
+  }
+}
