@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const db = require('./models')
+const apiRoutes = require('./routes/apiRoutes')
 
 /* @Middlewares */
 // Parses urlencoded bodies
@@ -9,8 +10,7 @@ app.use(express.urlencoded({ extended: true }))
 // Parses json
 app.use(express.json())
 
-// Basic_routes
-app.get('/', (_, res) => res.send('Express Server'))
+app.use('/api', apiRoutes)
 
 // Connecting to a database using promises
 db.sequelize
