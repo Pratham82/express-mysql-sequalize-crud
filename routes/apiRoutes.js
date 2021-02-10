@@ -7,8 +7,8 @@ const updateTodoById = require('../controllers/updateTodoById')
 const router = express.Router()
 
 router.get('/all', getAllTodos)
-router.post('/new', createNewTodo)
 router.get('/find/:id', getTodoById)
+router.post('/new', createNewTodo)
 router.delete('/delete/:id', deleteTodoById)
 router.put('/update/:id', updateTodoById)
 
