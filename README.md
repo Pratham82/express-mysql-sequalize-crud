@@ -37,3 +37,62 @@ npm i
 ```
 npm i -g nodemon
 ```
+
+4. Run server
+
+```
+npm start
+```
+
+## Route references ( Use postman for testing )
+
+1. Get All Todos:
+
+```
+localhost:3000/api/new
+```
+
+2. Get todo by id:
+
+```
+localhost:3000/api/find/${id}
+```
+
+3. Create new todo and pass the text in body
+
+```
+localhost:3000/api/new
+```
+
+4. Delete Todo:
+
+```
+localhost:3000/api/delete/${id}
+```
+
+5. Update todo and pass the new text in body
+
+```
+localhost:3000/api/update/${id}
+```
+
+```
+node_modules
+├──  config
+│  └── config.json
+├── controllers
+│  ├── createNewTodo.js
+│  ├── deleteTodoById.js
+│  ├── getAllTodos.js
+│  ├── getTodoById.js
+│  └── updateTodoById.js
+├── models
+│  ├── index.js
+│  └── todo.js
+├── package-lock.json
+├── package.json
+├── README.md
+├── routes
+│  └── apiRoutes.js
+└── server.js
+```
